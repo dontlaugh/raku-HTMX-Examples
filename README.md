@@ -4,7 +4,7 @@ On branch steve-03-fragments
 We need `zef install https://github.com/librasteve/cro-webapp.git` until Cro Fragments are relased.
 
 Candidates for Fragments are:
-- [x] click_to_load
+- [x] click_to_load - 1
 - [ ] edit_row
 - [ ] inline_validation
 - [ ] infinite_scroll
