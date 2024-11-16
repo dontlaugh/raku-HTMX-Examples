@@ -1,5 +1,20 @@
 **WORK IN PROGRESS**
 
+On branch steve-03-fragments
+We need `zef install https://github.com/librasteve/cro-webapp.git` until Cro Fragments are relased.
+
+Candidates for Fragments are:
+- [x] click_to_load
+- [ ] edit_row
+- [ ] inline_validation
+- [ ] infinite_scroll
+- [ ] value_select
+- [ ] tabs_hateos
+- [ ] tabs_hyperscript
+- [ ] updating_other_content
+
+---
+
 Contributions welcome - by PR please if possible.
 
 See [Issues](https://github.com/librasteve/raku-HTMX-Examples/issues) for feature discussions.

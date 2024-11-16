@@ -22,7 +22,7 @@ sub click_to_load-routes() is export {
         }
 
         get -> 'contacts', :$page! {
-            template 'partial.crotmp', {contacts=>gen-contacts($page), next=>($page+1)};
+            template 'index.crotmp', :fragment<partial>, {contacts=>gen-contacts($page), next=>($page+1)};
         }
     }
 }

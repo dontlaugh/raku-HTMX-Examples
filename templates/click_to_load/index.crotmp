@@ -7,20 +7,22 @@
         </tr>
     </thead>
     <tbody id="tbody">
-        <@contacts>
-        <tr class="">
-            <td><.name></td>
-            <td><.email></td>
-            <td><.id></td>
-        </tr>
-        </@>
-        <tr id="replaceMe">
-            <td colspan="3">
-                <button class='btn' hx-get="/click_to_load/contacts?page=<.next>" hx-target="#replaceMe"
-                    hx-swap="outerHTML">
-                    Load More Agents... <img class="htmx-indicator" src="/img/bars.svg">
-                </button>
-            </td>
-        </tr>
+        <:fragment partial($_)>
+            <@contacts>
+            <tr class="">
+                <td><.name></td>
+                <td><.email></td>
+                <td><.id></td>
+            </tr>
+            </@>
+            <tr id="replaceMe">
+                <td colspan="3">
+                    <button class='btn' hx-get="/click_to_load/contacts?page=<.next>" hx-target="#replaceMe"
+                        hx-swap="outerHTML">
+                        Load More Agents... <img class="htmx-indicator" src="/img/bars.svg">
+                    </button>
+                </td>
+            </tr>
+        </:>
     </tbody>
 </table>
