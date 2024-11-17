@@ -5,7 +5,7 @@ We need `zef install https://github.com/librasteve/cro-webapp.git` until Cro Fra
 
 Candidates for Fragments are:
 - [x] click_to_load - 1
-- [ ] edit_row
+- [x] edit_row - 1
 - [ ] inline_validation
 - [ ] infinite_scroll
 - [ ] value_select

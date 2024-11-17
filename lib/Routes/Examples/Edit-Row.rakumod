@@ -35,6 +35,10 @@ sub edit_row-routes() is export {
             template 'partial.crotmp', $data<contacts>[$id];
         }
 
+        get -> 'contact', Int $id {
+            template 'index.crotmp', :fragment<partial>, $data<contacts>[$id];
+        }
+
         put -> 'contact', Int $id  {
 
             request-body -> %fields {

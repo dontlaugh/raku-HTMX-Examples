@@ -21,6 +21,7 @@
     <tbody hx-target="closest tr" hx-swap="outerHTML">
         <@contacts>
         <form>
+          <:fragment partial($_)>
             <tr>
                 <td><.name></td>
                 <td><.email></td>
@@ -40,6 +41,7 @@
                     </button>
                 </td>
             </tr>
+          </:>
         </form>
         </@>
     </tbody>
