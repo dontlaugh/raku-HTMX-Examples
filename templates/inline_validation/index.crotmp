@@ -20,11 +20,15 @@
             <label>Email Address</label>
             <input name="email" hx-post="/inline_validation/contact/email" hx-indicator="#ind" value="<.email>">
             <img id="ind" src="/img/bars.svg" class="htmx-indicator" />
-            <?.taken>
-                <span class='pico-color-pink-600'>That email is already taken. Please enter another email.</span><br /><br />
+            <?{.status eq 'taken'}>
+                <span class='pico-color-pink-600'>
+                That email is already taken. Please enter another email.
+                </span><br /><br />
             </?>
-            <?.invalid>
-                <span class='pico-color-pink-600'>Please enter a valid email address.</span><br /><br />
+            <?{.status eq 'invalid'}>
+                <span class='pico-color-pink-600'>
+                Please enter a valid email address.
+                </span><br /><br />
             </?>
         </div>
         </:>

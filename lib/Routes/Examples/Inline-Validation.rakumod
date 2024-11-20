@@ -15,25 +15,22 @@ sub inline_validation-routes() is export {
         }
 
         post -> 'contact', 'email'  {
+
+            sub check($_) {
+                when * eq 'test@test.com' { 'valid'   }
+                when /\S+ \@ \S+ \. \S+/  { 'taken'   }
+                default                   { 'invalid' }
+            }
+
             my $data;
 
             request-body -> %fields {
-                $data<email> = %fields<email>,
+                $data<email> = %fields<email>
             }
 
-            given $data<email> {
-                when * eq 'test@test.com' {
-                    template 'index.crotmp', :fragment<partial>, $data;
-                }
-                when /\S+ \@ \S+ \. \S+/ {
-                    $data<taken> = True;
-                    template 'index.crotmp', :fragment<partial>, $data;
-                }
-                default {
-                    $data<invalid> = True;
-                    template 'index.crotmp', :fragment<partial>, $data;
-                }
-            }
+            $data<status> = check $data<email>;
+
+            template 'index.crotmp', :fragment<partial>, $data;
         }
     }
 }
