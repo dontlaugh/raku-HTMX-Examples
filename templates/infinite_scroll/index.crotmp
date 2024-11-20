@@ -7,6 +7,7 @@
         </tr>
     </thead>
     <tbody id="tbody">
+        <:fragment partial($_)>
         <@contacts : $c>
         <?$c.last>
         <tr hx-get="/infinite_scroll/contacts?page=<.next>" hx-trigger="revealed" hx-swap="afterend" hx-target="this">
@@ -19,6 +20,7 @@
             <td><$c.id></td>
         </tr>
         </@>
+        </:>
     </tbody>
 </table>
 <img id="ind" src="/img/bars.svg" width="150" class="htmx-indicator" />

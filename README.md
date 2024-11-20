@@ -7,7 +7,7 @@ Candidates for Fragments are:
 - [x] click_to_load - 1
 - [x] edit_row - 1
 - [x] inline_validation
-- [ ] infinite_scroll
+- [x] infinite_scroll
 - [ ] value_select
 - [ ] tabs_hateos
 - [ ] tabs_hyperscript

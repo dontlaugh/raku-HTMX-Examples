@@ -24,7 +24,7 @@ sub infinite_scroll-routes() is export {
 
         get -> 'contacts', Int :$page! {
             sleep 1;                    #<= delay to make spinner visible
-            template 'partial.crotmp', {contacts=>gen-contacts($page), next=>($page+1)};
+            template 'index.crotmp', :fragment<partial>, {contacts=>gen-contacts($page), next=>($page+1)};
         }
     }
 }
