@@ -1,12 +1,12 @@
 **WORK IN PROGRESS**
 
 On branch steve-03-fragments
-We need `zef install https://github.com/librasteve/cro-webapp.git` until Cro Fragments are relased.
+We need `zef install https://github.com/croservices/cro-webapp.git` until Cro Fragments are relased.
 
 Candidates for Fragments are:
 - [x] click_to_load - 1
 - [x] edit_row - 1
-- [ ] inline_validation
+- [x] inline_validation
 - [ ] infinite_scroll
 - [ ] value_select
 - [ ] tabs_hateos

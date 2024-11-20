@@ -18,19 +18,20 @@ sub inline_validation-routes() is export {
             my $data;
 
             request-body -> %fields {
-                $data<email> = %fields<email>;
+                $data<email> = %fields<email>,
             }
 
-
             given $data<email> {
-                when *eq 'test@test.com' {
-                    template 'partial_valid.crotmp', $data;
+                when * eq 'test@test.com' {
+                    template 'index.crotmp', :fragment<partial>, $data;
                 }
                 when /\S+ \@ \S+ \. \S+/ {
-                    template 'partial_taken.crotmp', $data;
+                    $data<taken> = True;
+                    template 'index.crotmp', :fragment<partial>, $data;
                 }
                 default {
-                    template 'partial_invalid.crotmp', $data;
+                    $data<invalid> = True;
+                    template 'index.crotmp', :fragment<partial>, $data;
                 }
             }
         }
