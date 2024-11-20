@@ -11,9 +11,11 @@
   <div>
     <label>Model</label>
     <select id="models" name="model">
+        <:fragment partial($_)>
         <@models : $model>
         <option value="<$model>"><$model></option>
         </@>
+        </:>
     </select>
     <img class="htmx-indicator" width="20" src="/img/bars.svg">
   </div>

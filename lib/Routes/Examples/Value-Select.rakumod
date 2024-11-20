@@ -4,9 +4,9 @@ use Cro::WebApp::Template;
 sub value_select-routes() is export {
 
     my $data = {
-        audi => { models => ["A1", "A4", "A6"] },
-        toyota => { models => ["Landcruiser", "Tacoma", "Yaris"] },
-        bmw => { models => ["325i", "325ix", "X5"] },
+        audi   => { models => ["A1", "A4", "A6"] },
+        toyota => { models => ["Landcruiser", "Tacoma", "Yaris", "RAV4" ] },
+        bmw    => { models => ["325i", "325ix", "X5"] },
     };
 
     route {
@@ -17,7 +17,7 @@ sub value_select-routes() is export {
         }
 
         get -> 'models', :$make!  {
-            template 'models.crotmp', { models => $data{$make}<models> };
+            template 'index.crotmp', :fragment<partial>, { models => $data{$make}<models> };
         }
     }
 }
