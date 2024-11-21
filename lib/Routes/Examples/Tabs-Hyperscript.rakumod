@@ -7,19 +7,19 @@ sub tabs_hyperscript-routes() is export {
         template-location 'templates/tabs_hyperscript';
 
         get -> {
-            template 'index.crotmp';
+            template 'index.crotmp', {:tab<tab1>};
         }
 
         get -> 'tab1' {
-            template 'tab1.crotmp';
+            template 'index.crotmp', :fragment<tabs>, {:tab<tab1>};
         }
 
         get -> 'tab2' {
-            template 'tab2.crotmp';
+            template 'index.crotmp', :fragment<tabs>, {:tab<tab2>};
         }
 
         get -> 'tab3' {
-            template 'tab3.crotmp';
+            template 'index.crotmp', :fragment<tabs>, {:tab<tab3>};
         }
     }
 }

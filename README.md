@@ -10,8 +10,7 @@ Candidates for Fragments are:
 - [x] infinite_scroll
 - [x] value_select
 - [x] tabs_hateoas
-- [ ] tabs_hyperscript
-- [ ] updating_other_content
+- [x] tabs_hyperscript
 
 ---
 
