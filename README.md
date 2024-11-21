@@ -1,7 +1,7 @@
-**WORK IN PROGRESS**
+**Branch for Cro Fragments**
 
 On branch steve-03-fragments
-We need `zef install https://github.com/croservices/cro-webapp.git` until Cro Fragments are relased.
+We need `zef install https://github.com/croservices/cro-webapp.git` until Cro Fragments are fully released.
 
 Candidates for Fragments are:
 - [x] click_to_load - 1
@@ -11,6 +11,8 @@ Candidates for Fragments are:
 - [x] value_select
 - [x] tabs_hateoas
 - [x] tabs_hyperscript
+
+Destiny is for this branch to supercede main.
 
 ---
 
