@@ -5,4 +5,28 @@
     <li><a href="#" hx-get="/tabs_hateoas/tab3" hx-target="#tab">Tab 3</a></li>
   </ul>
 </nav>
-<div id="tab" hx-get="/tabs_hateoas/tab1" hx-trigger="load"></div>
+<div id="tab">
+  <:fragment tabs($_)>
+    <section>
+      <figure>
+        <blockquote>
+        <?{.tab eq 'tab1'}>
+          "When you're new to something, you bring an ignorance that can
+          be highly innovative."
+          <footer><cite>– Rick Rubin</cite></footer>
+        </?>
+        <?{.tab eq 'tab2'}>
+          "Nothing beats a simple worldview. When we know who is the bad
+          guy, the day has structure."
+          <footer><cite>– Volker Pispers</cite></footer>
+        </?>
+        <?{.tab eq 'tab3'}>
+          "Ignorance is not bliss. Ignorance is poverty. Ignorance is devastation.
+          Ignorance is tragedy. And ignorance is illness. It all stems from ignorance."
+          <footer><cite>– Jim Rohn</cite></footer>
+        </?>
+        </blockquote>
+      </figure>
+    </section>
+  </:>
+</div>

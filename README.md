@@ -8,8 +8,8 @@ Candidates for Fragments are:
 - [x] edit_row - 1
 - [x] inline_validation
 - [x] infinite_scroll
-- [ ] value_select
-- [ ] tabs_hateos
+- [x] value_select
+- [x] tabs_hateoas
 - [ ] tabs_hyperscript
 - [ ] updating_other_content
 

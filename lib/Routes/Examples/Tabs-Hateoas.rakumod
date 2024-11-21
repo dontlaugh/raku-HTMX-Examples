@@ -7,11 +7,11 @@ sub tabs_hateoas-routes() is export {
         template-location 'templates/tabs_hateoas';
 
         get -> {
-            template 'index.crotmp';
+            template 'index.crotmp', {:tab<tab1>};
         }
 
-        get -> $target where /^ tab\d $/ {
-            template "$target.crotmp";
+        get -> $tab where /^ tab\d $/ {
+            template 'index.crotmp', :fragment<tabs>, {:$tab};
         }
     }
 }

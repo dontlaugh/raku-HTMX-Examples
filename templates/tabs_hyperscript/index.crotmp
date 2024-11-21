@@ -1,6 +1,6 @@
 <div id="tabs" hx-target="#tab-contents" role="tablist"
     _="on htmx:afterOnLoad
-<#>    set @aria-selected of <[aria-selected=true]/> to false</#>
+<#>set @aria-selected of <[aria-selected=true]/> to false</#>
 <#>^^ this is a dirty rotten cheat</#>
     tell the target
         take .selected
