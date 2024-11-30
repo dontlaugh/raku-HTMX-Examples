@@ -12,7 +12,7 @@ Candidates for Fragments are:
 - [x] tabs_hateoas
 - [x] tabs_hyperscript
 
-Destiny is for this branch to supercede main.
+Plan is for this branch to supersede main.
 
 ---
 
