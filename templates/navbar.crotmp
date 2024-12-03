@@ -1,29 +1,7 @@
 <:sub navbar>
 <ol class="no-bullets"' hx-target="#content" hx-push-url="false" id="options">
     <li><a href="/click_to_edit">Click to Edit</a></li>
-    <li><a href="/bulk_update">Bulk Update</a></li>
-    <li><a href="/click_to_load">Click to Load</a></li>
-    <li><a href="/delete_row">Delete Row</a></li>
-    <li><a href="/edit_row">Edit Row</a></li>
-    <li><a href="/lazy_loading">Lazy Loading</a></li>
-    <li><a href="/inline_validation">Inline Validation</a></li>
-    <li><a href="/infinite_scroll">Infinite Scroll</a></li>
-    <li><a href="/active_search">Active Search</a></li>
-    <li><a href="/progress_bar">Progress Bar</a></li>
-    <li><a href="/value_select">Value Select</a></li>
-    <li><a href="/animations">Animations</a></li>
-    <li><a href="/file_upload">File Upload</a></li>
-    <li><a href="/preserving_file_inputs">Preserving File Inputs</a></li>
-    <li><a href="/dialogs_browser">Dialogs - Browser</a></li>
-    <li><a href="/dialogs_uikit">Dialogs - UIKit</a></li>
-    <li><a href="/dialogs_bootstrap">Dialogs - Bootstrap</a></li>
-    <li><a href="/dialogs_custom">Dialogs - Custom</a></li>
-    <li><a href="/tabs_hateoas">Tabs (using HATEOAS)</a></li>
-    <li><a href="/tabs_hyperscript">Tabs (using Hyperscript)</a></li>
-    <li><a href="/keyboard_shortcuts">Keyboard Shortcuts</a></li>
-    <li><a href="/sortable">Sortable</a></li>
-    <li><a href="/updating_other_content">Updating Other Content</a></li>
-    <li><a href="/confirm">Confirm</a></li>
+    <li><a href="/template_inline">Template Inline</a></li>
 </ol>
 </:>
 

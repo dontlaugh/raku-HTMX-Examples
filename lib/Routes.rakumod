@@ -15,5 +15,8 @@ sub routes() is export {
 
         use Routes::Examples::Click-To-Edit;
         include click_to_edit => click_to_edit-routes;
+
+        use Routes::Examples::Template-Inline;
+        include template_inline => template_inline-routes;
     }
 }
