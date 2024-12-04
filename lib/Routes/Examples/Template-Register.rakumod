@@ -4,14 +4,15 @@ use Cro::WebApp::Template;
 my constant $location = 'templates';
 my constant $base = $*PROGRAM.parent.parent.parent.parent.add($location);
 
-role HTML::Component {
+role HTML::Component::CroTmp {
     has $.namespace = 'HTML-Component';
 
     method register {...}
+    method crotmp {...}
     method action {...}
 }
 
-class Thing does HTML::Component {
+class Thing does HTML::Component::CroTmp {
     has $.crotmp;
 
     has $.action;
