@@ -4,49 +4,65 @@ use Cro::WebApp::Template;
 my constant $location = 'templates';
 my constant $base = $*PROGRAM.parent.parent.parent.parent.add($location);
 
-class Component {
-    has $.template = q:to/END/;
-        <.foo>, <.bar>
-        <:sub fn()>Did you call me?</:>
-        <a href="/template_register/call_me">Call Me</a>
-        <:fragment fn($_)><?.show>Did you frag me?</?></:>
-        <a href="/template_register/frag_me">Frag Me</a>
+role HTML::Component {
+    has $.namespace = 'HTML-Component';
+
+    method register {...}
+    method action {...}
+}
+
+class Thing does HTML::Component {
+    has $.crotmp;
+
+    has $.action;
+    has $!caller;
+
+    has $.data = { :foo<hello>, :bar<world> };
+
+    submethod TWEAK {
+        $!crotmp = $!namespace ~ '-' ~ self.^name ~ '.crotmp';
+
+        $!caller = q|<:use '| ~ $!crotmp ~ q|'> <&fn()>|;
+        $!action = $!namespace ~ '-' ~ self.^name ~ '-action.crotmp';
+    }
+
+    method template {
+        q:to/END/;
+            <.foo>, <.bar>
+
+            <:sub fn()>Did you call me?</:>
+            <a href="/template_register/call_me">Call Me</a>
+
+            <:fragment fn($_)><?.show>Did you frag me?</?></:>
+            <a href="/template_register/frag_me">Frag Me</a>
         END
-
-    has $.caller = q|<:use 'registerme.crotmp'><&fn()>|;
-
-    has $.data = { foo => 'hello', bar => 'world' };
-
-    has $.filename = 'registerme.crotmp';
-
+    }
 
     method register {
-        $base.add($!filename).IO.spurt: $!template;
-        $base.add('caller.crotmp').IO.spurt: $!caller;
+        $base.add($!crotmp).IO.spurt: $.template;
+        $base.add($!action).IO.spurt: $!caller;
     }
 }
 
 
 sub template_register-routes() is export {
 
-    my $c = Component.new;
+    my $thing = Thing.new;
 
     route {
-        $c.register;
+        $thing.register;
         template-location $location;
 
         get -> {
-            template 'registerme.crotmp', $c.data;
-#                template-inline '<.foo>, <.bar>', { foo => 'hello', bar => 'world'};
+            template $thing.crotmp, $thing.data;
         }
 
         get -> 'call_me'  {
-            template 'caller.crotmp';
+            template $thing.action;
         }
 
         get -> 'frag_me'  {
-            template 'registerme.crotmp', :fragment<fn>, {:show};
-            template-inline $c.template, :fragment<fn>, {:show};
+            template $thing.crotmp, :fragment<fn>, {:show};
         }
     }
 }
