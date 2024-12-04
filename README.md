@@ -7,6 +7,10 @@ Please follow the Getting Started in the ```main``` branch
 NB. Some examples use `template-inline` needs
 ```zef install https://github.com/librasteve/cro-webapp.git```
 
+NB. Some examples write files to the WebApp dir so must run with
+```export EXAMPLES_HOST="0.0.0.0" && export EXAMPLES_PORT="20000"```
+```raku -Ilib service.raku```
+
 
 TODOS
 =====
