@@ -7,6 +7,9 @@ my constant $base = $*PROGRAM.parent.parent.parent.parent.add($location);
 #| API for an HTML::Component that uses the Cro::WebApp cro template
 #| mechanism, each component has one static cro template file that is
 #| registered with the Cro::Template::Repository when it is instantiated.
+#|
+#| Such a component is typically followed with an exported route block
+#| that instantiates it and then publishes its associated routes
 role HTML::Component::CroTmp {
     has $.namespace = 'HTML-Component';
 
