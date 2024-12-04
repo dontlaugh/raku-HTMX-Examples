@@ -4,6 +4,9 @@ This branch is for the FN stylee
 
 Please follow the Getting Started in the ```main``` branch
 
+NB. Some examples use `template-inline` needs
+```zef install https://github.com/librasteve/cro-webapp.git```
+
 
 TODOS
 =====
