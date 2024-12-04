@@ -4,12 +4,25 @@ use Cro::WebApp::Template;
 my constant $location = 'templates';
 my constant $base = $*PROGRAM.parent.parent.parent.parent.add($location);
 
+#| API for an HTML::Component that uses the Cro::WebApp cro template
+#| mechanism, each component has one static cro template file that is
+#| registered with the Cro::Template::Repository when it is instantiated.
 role HTML::Component::CroTmp {
     has $.namespace = 'HTML-Component';
 
-    method register {...}
+    #| get the template Str
+    method template {...}
+
+    #| the template name for use in a route block
     method crotmp {...}
+
+    #| each component may have an action that calls a sub
+    #| or fragment declared in its template
     method action {...}
+
+    #| write the crotmp files to the repo
+    method register {...}
+
 }
 
 class Thing does HTML::Component::CroTmp {
