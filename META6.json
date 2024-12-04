@@ -15,7 +15,8 @@
     "provides": {
         "Routes": "lib/Routes.rakumod",
         "Routes::Examples::Click-To-Edit": "lib/Routes/Examples/Click-To-Edit.rakumod",
-        "Routes::Examples::Template-Inline": "lib/Routes/Examples/Template-Inline.rakumod"
+        "Routes::Examples::Template-Inline": "lib/Routes/Examples/Template-Inline.rakumod",
+        "Routes::Examples::Template-Register": "lib/Routes/Examples/Template-Register.rakumod"
     },
     "license": "Artistic-2.0",
     "source-url": "https://github.com/librasteve/raku-HTMX-Examples.git"

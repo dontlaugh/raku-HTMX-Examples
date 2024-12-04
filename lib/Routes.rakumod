@@ -18,5 +18,8 @@ sub routes() is export {
 
         use Routes::Examples::Template-Inline;
         include template_inline => template_inline-routes;
+
+        use Routes::Examples::Template-Register;
+        include template_register => template_register-routes;
     }
 }
