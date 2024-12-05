@@ -32,7 +32,7 @@ class Thing does HTML::Component::CroTmp {
     has $.crotmp;
 
     has $.action;
-    has $!caller;
+    has $.caller;
 
     has $.data = { :foo<hello>, :bar<world> };
 
