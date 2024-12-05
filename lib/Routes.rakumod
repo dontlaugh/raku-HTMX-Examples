@@ -21,5 +21,8 @@ sub routes() is export {
 
         use Routes::Examples::Template-Register;
         include template_register => template_register-routes;
+
+        use Routes::Examples::Template-Node1;
+        include template_node1 => template_node1-routes;
     }
 }

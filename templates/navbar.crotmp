@@ -3,6 +3,7 @@
     <li><a href="/click_to_edit">Click to Edit</a></li>
     <li><a href="/template_inline">Template Inline</a></li>
     <li><a href="/template_register">Template Register</a></li>
+    <li><a href="/template_node1">Template Node1</a></li>
 </ol>
 </:>
 
